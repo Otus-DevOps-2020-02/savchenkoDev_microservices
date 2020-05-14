@@ -1,0 +1,7 @@
+REPOSITORY                 TAG                 IMAGE ID            CREATED             SIZE
+yourname/ubuntu-tmp-file   latest              138deaed6dd1        35 seconds ago      125MB
+ubuntu                     16.04               005d2078bdfa        13 days ago         125MB
+hello-world                latest              bf756fb1ae65        4 months ago        13.3kB
+
+Контейнер представляет собой среду созданную на основе образа. Образ - это абстрактное представление для контейнера
+Чтобы создать контейнер, докер берет образ и инициализирует различные параметры (сетевые порты, имя контейнера, идентификатор и лимиты ресурсов).

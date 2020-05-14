@@ -1,0 +1,4 @@
+project         = "project-id"
+public_key_path = "path/to/public/key"
+disk_image      = "ubuntu-1604-lts"
+private_key     = "path/to/private/key"

@@ -1,0 +1,14 @@
+plugin: gcp_compute
+projects:
+  - docker-276519
+zones:
+  - europe-west1-d
+keyed_groups:
+    - key: name
+groups:
+  docker: "'docker-host' in name"
+hostnames:
+  - public_ip
+filters: []
+auth_kind: serviceaccount
+service_account_file: ~/service_key.json
