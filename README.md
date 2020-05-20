@@ -43,3 +43,33 @@ docker run -d --network=reddit \
             --env COMMENT_SERVICE_HOST=comment_1 \
             -p 9292:9292 <login>/ui:2.0
 ```
+
+### HW 14: docker-compose.
+
+***Основное ДЗ***
+- чтобы реализовать кейс с множеством сетей в `docker-compose.yml` в секции `networks` надо объявить эти сети
+```
+networks:
+  front_net:
+  back_net:
+```
+и в секциях сервисов назначить к каким сетям принадлежит это сервис
+- про параметризацию сказать особо нечего, в `docker-compose.yml` меняем значения на `${VAR_NAME}`, например чтобы параметризировать порт надо в `docker-compose.yml` изменить секцию описывающую порты для сервиса ui
+```
+9292:9292/tcp -> ${UI_SERVICE_PORT}:9292/tcp
+```
+- базовое имя проекта можно задать
+ 1. при запуске dcoker-compose в опции `-p`: `docker-compose -p "reddit" up`
+ 2. в переменной окружения `COMPOSE_PROJECT_NAME`
+ ```
+ > $ export COMPOSE_PROJECT_NAME=reddit
+ > $ docker-compose up
+ ```
+ 3. в файле переменных окружения `.env`
+ ```
+ COMPOSE_PROJECT_NAME=reddit
+ ```
+
+***Задание со звездочкой***
+- для запуска сервисов `ruby` в режиме 'debug' и с двумя воркерами надо передать опции команде `puma`: `puma --debug -w 2`
+- сервис `python` можно запустить командой с помощью нового скрипта `post_app_v2.py`

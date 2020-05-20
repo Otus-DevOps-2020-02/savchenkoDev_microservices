@@ -7,3 +7,6 @@
 *.retry
 jdauphant.nginx
 vault.key
+
+# Ignore docker-compose env vars
+.env
